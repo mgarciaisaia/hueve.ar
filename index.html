@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <title>Vamos a hueve.ar</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -8,49 +8,57 @@
       * {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        margin: 0;
+        padding: 0;
       }
       body {
         background-color: #222;
-        min-height: 100%;
         text-align: center;
-        font: 14px "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        font: 14px sans-serif;
         color: #f6f4ea;
+        line-height: 1.5;
       }
       a {
         color: #f6f4ea;
       }
-      .page-wrapper {
+      .grid-container {
+        min-height: 100vh;
+        display: grid;
+        grid-template-rows: 2fr 9fr 1fr;
+      }
+      .grid-header {
+        padding: 1rem;
+      }
+      .main-content-embed {
+        height: 100%;
         width: 100%;
+        border: none;
       }
-      h1 {
-        font-weight: normal;
-        font-size: 4.2em;
-        margin-top: 15%;
-        margin-bottom: 0.8em;
+      .center-with-flexbox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
-      p {
-        font-size: 2.1em;
-      }
-      .footer {
-        position: absolute;
-        bottom: 0px;
-        left: 0px;
-        right: 0px;
-        padding: 0.8em;
-        font-size: 1.8em;
+      footer {
         background-color: #f6f4ea;
         color: #222;
       }
-      .footer a {
+      footer a {
         color: #222;
       }
     </style>
   </head>
-  <body>
-    <div class="page-wrapper">
-      <h1>¿Querés <a href="https://hueve.ar">hueve.ar</a>?</h1>
-      <p>Vení, jugate <a href="https://mgarciaisaia.github.io/2048dbz/">un 2048</a></p>
-    </div>
-    <div class="footer">Mejor <a href="https://deja.de.hueve.ar/">deja.de.hueve.ar</a></div>
+  <body class="grid-container">
+    <header class="grid-header center-with-flexbox">
+      <h1>¿Querés <a href="https://hueve.ar">hueve.ar</a> un rato?</h1>
+      <p class="call-to-action">Vení, jugate <a href="https://mgarciaisaia.github.io/2048dbz/" target="_blank">un 2048</a></p>
+    </header>
+    <main class="grid-main-content">
+      <iframe class="main-content-embed" src="https://mgarciaisaia.github.io/2048dbz/"></iframe>
+    </main>
+    <footer class="grid-footer center-with-flexbox">
+      <p>O mejor <a href="https://deja.de.hueve.ar/">deja.de.hueve.ar</a>...</p>
+    </footer>
   </body>
 </html>
