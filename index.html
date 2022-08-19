@@ -43,9 +43,22 @@
       footer {
         background-color: #f6f4ea;
         color: #222;
+        display: grid;
+        grid-template-columns: 48px auto 48px;
       }
       footer a {
         color: #222;
+      }
+      footer > * {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      footer #deja-de-hueve-ar {
+        grid-column: 2;
+      }
+      footer #link-repo {
+        grid-column: 3;
       }
     </style>
   </head>
@@ -57,8 +70,11 @@
     <main class="grid-main-content">
       <iframe class="main-content-embed" src="https://mgarciaisaia.github.io/2048dbz/"></iframe>
     </main>
-    <footer class="grid-footer center-with-flexbox">
-      <p>O mejor <a href="https://deja.de.hueve.ar/">deja.de.hueve.ar</a>...</p>
+    <footer class="grid-footer">
+      <span id="deja-de-hueve-ar">
+        <p>O mejor <a href="https://deja.de.hueve.ar/">deja.de.hueve.ar</a>...</p>
+      </span>
+      <a id="link-repo" href="https://github.com/mgarciaisaia/hueve.ar/" title="Repositorio Git"><img src="./icon-git-black.png" alt="Icono de Git" height="24" width="24" /></a>
     </footer>
   </body>
 </html>
